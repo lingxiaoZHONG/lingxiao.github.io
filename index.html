@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-llg-8 col-lg-12 visible-lg-inline-block columnRig bords">
                                 <h2>搜索查看</h2>
-                                <p>SIGN IN/SIGN OUT</p>
+                                <p>SEARCH</p>
                             </div>
                         </div>
                         
@@ -138,6 +138,650 @@
                                 <a href="javascript://" class="QRCode visible-lg-inline-block" title="扫一扫"><img src="WebUI/images/QRCode.gif" /></a>
                             </div>
                         </div>
+                        
+                        
+                        <!--搜索查看-->
+                        <div  class="prolist" style="display:none;">
+                            <div class="note-title col-lg-12">
+                                <h2>搜索查看</h2>
+                            </div>
+                            <div class="col-llg-6 col-lg-6  col-md-6 col-sm-6 col-xs-12">
+                                <div class="circle">
+                                    <h1>当前:<b class="nosit">未就座</b></h1><!--暂离class=“zl”;未就座class=“nosit”;在座：“zz”-->
+                                    <i>倒计时<em></em></i>
+                                    <div id="example-clock-container" class="roted"><p>暂未开始</p></div>
+                                </div>
+                            </div>
+                            <!--预约地点-->
+                            <div style="display:none" id="didian">
+                                <div class="note-title col-lg-12 clearfix">
+                                    <h2 class="fleft">预约</h2>
+                                    <span class="fleft margin-left_20 margin-top_15">
+                                        <a href="javascript://">1</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://" class="e">2</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://">3</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://">4</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <span class="glyphicon glyphicon-ok yes"></span><!--class="no"表示未成功;yes表示成功预约。-->
+                                    </span>
+                                    <a href="javascript://" class="next fright" id="time_next">下一步</a>
+                                    <a href="javascript://" class="previou timereturn fright" style="margin-right:20px;" id="time_previou">上一步</a>
+                                </div>
+                                <div class="fclear"></div>
+                                <div class="reservation margin-top_20 clearfix">
+                                    <div class="col-llg-7 col-lg-12 col-md-12  col-sm-12  col-xs-12">
+                                        <div class="input-group margin-left_10" id="show">
+                                            <input type="text" aria-label="Text input with dropdown button" class="form-control  input-lg" placeholder="选择阅览区域">
+                                            <div class="input-group-btn">
+                                                <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" class="btn btn-default dropdown-toggle  input-lg" type="button"> <span class="caret"></span></button>
+                                                <ul id="room" class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                        闵行分校
+                                                        <ul>
+                                                            <li>
+                                                                新馆
+                                                                <ul>
+                                                                    <li>1F</li>
+                                                                    <li>2F</li>
+                                                                    <li>3F</li>
+                                                                    <li>4F</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                老馆
+                                                                <ul>
+                                                                    <li>1F</li>
+                                                                    <li>2F</li>
+                                                                    <li>3F</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                逸夫馆
+                                                                <ul>
+                                                                    <li>1F</li>
+                                                                    <li>2F</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="itaic col-llg-5 visible-llg-inline-block hidden-lg hidden-md hidden-sm hidden-xs pull-right">
+                                        <i class="red pull-right">拥挤</i>
+                                        <i class="yellow pull-right">繁忙</i>
+                                        <i class="green pull-right">空闲</i>
+                                    </div>
+                                </div>
+                                <div class="reservation margin-top_20 clearfix">
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6 col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="red"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6 col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="red"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6 col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="red"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6  col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20 red-bs-example" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-llg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="yellow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    1F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-llg-4  col-lg-6  col-md-6   col-sm-12  col-xs-12">
+                                        <div class="bs-example margin-bot_20" data-example-id="default-media">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    2F
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading font30">西区C2阅览室</h4>
+                                                    <p>剩余座位数：12个</p>
+                                                    <i class="green"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--选座位-->
+                            <div style="display:none" id="zuowei">
+                                <div class="note-title col-lg-12 clearfix">
+                                    <h2 class="fleft">预约</h2>
+                                    <span class="fleft margin-left_20 margin-top_15">
+                                        <a href="javascript://">1</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://" class="e">2</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://">3</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <a href="javascript://">4</a>
+                                        <span class="glyphicon glyphicon-option-horizontal"></span>
+                                        <span class="glyphicon glyphicon-ok yes"></span><!--class="no"表示未成功;yes表示成功预约。-->
+                                    </span>
+                                    <a href="javascript://" class="next fright" id="zuowei_next">下一步</a>
+                                    <a href="javascript://" class="previou timereturn fright" style="margin-right:20px;" id="zuowei_previou">上一步</a>
+                                </div>
+                                <div class="fclear"></div>
+                                <p class="bujutu" data-toggle="modal"></p>
+                                <div class="fclear"></div>
+                                <div class="seat margin-top_70 clearfix">
+                                    <div class="icon_lists">
+                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
+                                        <div class="icon iconfont current">&#xe600;<b>02</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>03</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>04</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>05</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>06</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>07</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>08</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>09</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>10</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>11</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>12</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>13</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>14</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>15</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>16</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>17</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>18</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>19</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>20</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>21</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>22</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>23</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>24</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>25</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>26</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>27</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>28</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>29</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>30</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>31</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>32</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>33</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>34</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>35</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>36</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>37</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>38</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>39</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>40</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>41</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>42</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>43</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>44</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>45</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>46</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>47</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>48</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>49</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>50</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>51</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>52</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>53</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>54</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>55</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>56</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>57</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>58</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>59</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>60</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>61</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>62</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>63</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>64</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>65</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>66</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>67</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>68</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>69</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>70</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>71</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>72</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>73</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>74</b></div>
+                                    </div>
+                                </div>
+                                <div style="position:fixed; left:20px; top:20px; z-index:9999999; width:1900px;">
+                                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title text-center" id="myModalLabel">选择座位</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <iframe src="seat.html" id="myModal" style="border:none;" scrolling="no" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                    <button type="button" class="btn btn-danger">保存</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="success col-llg-5 col-lg-6  col-md-6 col-sm-6 col-xs-12">
+                                <h2>你已成功在在系统上预约到座位</h2>
+                                <div class="number">
+                                    <span class="col-llg-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">凭证号：</span>
+                                    <div class="col-llg-9 col-lg-9 col-md-9 col-sm-9  col-xs-9">201100800316（学号）</div>
+                                </div>
+                                <div class="success_time row">
+                                    <p>2014年10月7日</p>
+                                    <p>10:45 - 15:45</p>
+                                    <p>新馆1楼C区23号座位</p>
+                                    <p class="prom">（此凭证手机拍照有效）</p>
+                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-action" href="javascript://" style="display:none">入座</a>
+                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution pull-right" href="javascript://" style="display: none; ">取消预约</a>
+                                    <a class="col-md-12 col-lg-12 col-xs-12 col-sm-12 button button-rounded button-action2 button-block margin-bot_20" href="javascript://" style="display:block">延时</a>
+                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution2" href="javascript://" style="display: block;">暂离</a>
+                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution pull-right leave" href="javascript://" style="display: block; ">离开</a>
+                                </div>
+                            </div>
+                            <div class="fclear"></div>
+                        </div>
+                        
+                        
+                        <!--查询记录-->
+                        <div class="prolist" style="display:none">
+                            <div class="note-title col-lg-12 clearfix">
+                                <p class="screening margin-top_10 clearfix">
+                                    <b class="fleft glyphicon glyphicon-filter"></b>
+                                    <span id="spanQueryOperType">全部</span>
+                                    <input type="hidden" id="hidQueryOperType" value="0" />
+                                    <ul id="historys" class="dropdown-menu dropdown-menu-right">
+                                        <li>全部</li>
+                                        <li>成功预约</li>
+                                        <li>违规</li>
+                                    </ul>
+                                </p>
+                            </div>
+                            <div class="fclear"></div>
+                            <div class="panel_all">
+                                <div class="panel panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 15:22</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        您在终端机上预约成功~
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 16:22成功预约</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        您通过PC成功在6月28日 16:22~17:22预约 三鲁公路3279号2号楼四楼研发部 22号座位<br />
+                                        <a onclick="location.href='index.html'" class="button button-glow button-rounded button-highlight pull-right margin-top-10" href="javascript://">取消预约</a>
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 17:22 违规记录</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        我们在热带风暴
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">进入黑名单</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        6月28日 18:22预约超时，进黑名单
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 15:22</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        您在终端机上预约成功~
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 16:22成功预约</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        您通过PC成功在6月28日 16:22~17:22预约 三鲁公路3279号2号楼四楼研发部 22号座位<br />
+                                        <a class="button button-glow button-rounded button-highlight pull-right margin-top-10" href="javascript://">取消预约</a>
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">6月28日 17:22 违规记录</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        我们在热带风暴
+                                    </div>
+                                </div>
+                                <div class="panel panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">进入黑名单</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        6月28日 18:22预约超时，进黑名单
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
                         <!--预约时间-->
                         <div class="prolist" style="display:none;">
                             <div style="display:block;" id="shijian">
@@ -625,78 +1269,78 @@
                                     <div class="icon_lists">
                                         <div class="icon iconfont">&#xe600;<b>01</b></div>
                                         <div class="icon iconfont current">&#xe600;<b>02</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
-                                        <div class="icon iconfont">&#xe600;<b>01</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>03</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>04</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>05</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>06</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>07</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>08</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>09</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>10</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>11</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>12</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>13</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>14</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>15</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>16</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>17</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>18</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>19</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>20</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>21</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>22</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>23</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>24</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>25</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>26</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>27</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>28</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>29</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>30</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>31</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>32</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>33</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>34</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>35</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>36</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>37</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>38</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>39</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>40</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>41</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>42</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>43</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>44</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>45</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>46</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>47</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>48</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>49</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>50</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>51</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>52</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>53</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>54</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>55</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>56</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>57</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>58</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>59</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>60</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>61</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>62</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>63</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>64</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>65</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>66</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>67</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>68</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>69</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>70</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>71</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>72</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>73</b></div>
+                                        <div class="icon iconfont">&#xe600;<b>74</b></div>
                                     </div>
                                 </div>
                                 <div style="position:fixed; left:20px; top:20px; z-index:9999999; width:1900px;">
@@ -807,122 +1451,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--签到/离开-->
-                        <div  class="prolist" style="display:none;">
-                            <div class="note-title col-lg-12">
-                                <h2>签到/离开</h2>
-                            </div>
-                            <div class="col-llg-6 col-lg-6  col-md-6 col-sm-6 col-xs-12">
-                                <div class="circle">
-                                    <h1>当前:<b class="nosit">未就座</b></h1><!--暂离class=“zl”;未就座class=“nosit”;在座：“zz”-->
-                                    <i>倒计时<em></em></i>
-                                    <div id="example-clock-container" class="roted"><p>暂未开始</p></div>
-                                </div>
-                            </div>
-                            <div class="success col-llg-5 col-lg-6  col-md-6 col-sm-6 col-xs-12">
-                                <h2>你已成功在在系统上预约到座位</h2>
-                                <div class="number">
-                                    <span class="col-llg-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">凭证号：</span>
-                                    <div class="col-llg-9 col-lg-9 col-md-9 col-sm-9  col-xs-9">201100800316（学号）</div>
-                                </div>
-                                <div class="success_time row">
-                                    <p>2014年10月7日</p>
-                                    <p>10:45 - 15:45</p>
-                                    <p>新馆1楼C区23号座位</p>
-                                    <p class="prom">（此凭证手机拍照有效）</p>
-                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-action" href="javascript://" style="display:none">入座</a>
-                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution pull-right" href="javascript://" style="display: none; ">取消预约</a>
-                                    <a class="col-md-12 col-lg-12 col-xs-12 col-sm-12 button button-rounded button-action2 button-block margin-bot_20" href="javascript://" style="display:block">延时</a>
-                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution2" href="javascript://" style="display: block;">暂离</a>
-                                    <a class="col-md-5 col-lg-5 col-xs-5 col-sm-5 button button-rounded button-caution pull-right leave" href="javascript://" style="display: block; ">离开</a>
-                                </div>
-                            </div>
-                            <div class="fclear"></div>
-                        </div>
-                        <!--查询记录-->
-                        <div class="prolist" style="display:none">
-                            <div class="note-title col-lg-12 clearfix">
-                                <p class="screening margin-top_10 clearfix">
-                                    <b class="fleft glyphicon glyphicon-filter"></b>
-                                    <span id="spanQueryOperType">全部</span>
-                                    <input type="hidden" id="hidQueryOperType" value="0" />
-                                    <ul id="historys" class="dropdown-menu dropdown-menu-right">
-                                        <li>全部</li>
-                                        <li>成功预约</li>
-                                        <li>违规</li>
-                                    </ul>
-                                </p>
-                            </div>
-                            <div class="fclear"></div>
-                            <div class="panel_all">
-                                <div class="panel panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 15:22</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        您在终端机上预约成功~
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-success">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 16:22成功预约</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        您通过PC成功在6月28日 16:22~17:22预约 三鲁公路3279号2号楼四楼研发部 22号座位<br />
-                                        <a onclick="location.href='index.html'" class="button button-glow button-rounded button-highlight pull-right margin-top-10" href="javascript://">取消预约</a>
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-warning">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 17:22 违规记录</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        我们在热带风暴
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-danger">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">进入黑名单</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        6月28日 18:22预约超时，进黑名单
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 15:22</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        您在终端机上预约成功~
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-success">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 16:22成功预约</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        您通过PC成功在6月28日 16:22~17:22预约 三鲁公路3279号2号楼四楼研发部 22号座位<br />
-                                        <a class="button button-glow button-rounded button-highlight pull-right margin-top-10" href="javascript://">取消预约</a>
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-warning">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">6月28日 17:22 违规记录</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        我们在热带风暴
-                                    </div>
-                                </div>
-                                <div class="panel panel panel-danger">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">进入黑名单</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        6月28日 18:22预约超时，进黑名单
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    
                     </div>
                 </div>
                 <div class="fclear"></div>
